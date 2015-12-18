@@ -1,5 +1,5 @@
 #include "Robot.h"
-#include "stdio.h"
+#include <iostream>
 #include <HAL/HAL.hpp>
 
 Robot::Robot() {

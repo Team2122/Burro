@@ -6,16 +6,18 @@
 class Robot: public IterativeRobot {
 public:
 	Robot();
-	virtual void RobotInit();
-	virtual void DisabledInit();
-	virtual void AutonomousInit();
-	virtual void TeleopInit();
-	virtual void TestInit();
-	virtual void DisabledPeriodic();
-	virtual void AutonomousPeriodic();
-	virtual void TeleopPeriodic();
-	virtual void TestPeriodic();
-};
 
+	void RobotInit() override;
+
+	void DisabledInit() override;
+	void AutonomousInit() override;
+	void TeleopInit() override;
+	void TestInit() override;
+
+	void DisabledPeriodic() override;
+	void AutonomousPeriodic() override;
+	void TeleopPeriodic() override;
+	void TestPeriodic() override;
+};
 
 #endif /* SRC_ROBOT_H_ */
