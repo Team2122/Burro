@@ -9,8 +9,10 @@ class Drive: public Subsystem {
 public:
 	Drive();
 	~Drive();
+
 	void SetSpeeds(float leftSpeed, float rightSpeed);
 	void ResetSpeeds();
+
 private:
 	Victor* left1;
 	Victor* left2;

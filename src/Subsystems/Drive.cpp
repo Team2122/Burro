@@ -9,7 +9,6 @@ Drive::Drive() :
 	right1 = new Victor(3);
 	right2 = new Victor(4);
 	right3 = new Victor(5);
-
 }
 
 Drive::~Drive() {
