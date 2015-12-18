@@ -1,9 +1,12 @@
 #include "Robot.h"
 
+#include "CommandBase.h"
 #include <iostream>
 #include <HAL/HAL.hpp>
 
 Robot::Robot() {
+	// define robot pointer
+	CommandBase::robot = this;
 }
 
 // robot init implementation
