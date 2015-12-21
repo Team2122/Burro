@@ -4,6 +4,7 @@
 #include <iostream>
 #include <HAL/HAL.hpp>
 #include "Subsystems/Drive.h"
+#include "Subsystems/OI.h"
 
 Robot::Robot() {
 	// define robot pointer
@@ -14,6 +15,7 @@ Robot::Robot() {
 void Robot::RobotInit() {
 	std::cout << "Entered RobotInit()" << std::endl;
 	drive = new Drive;
+	oi = new OI;
 }
 
 // disabled init implementation

@@ -4,11 +4,13 @@
 #include <IterativeRobot.h>
 
 class Drive;
+class OI;
 class Robot: public IterativeRobot {
 public:
 	Robot();
 
 	Drive* drive;
+	OI* oi;
 
 	void RobotInit() override;
 
