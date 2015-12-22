@@ -6,12 +6,14 @@
 class Drive;
 class OI;
 class Scheduler;
+class Command;
 class Robot: public IterativeRobot {
 public:
 	Robot();
 
 	Drive* drive;
 	OI* oi;
+	Command* driveCommand;
 
 	void RobotInit() override;
 

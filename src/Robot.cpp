@@ -6,6 +6,7 @@
 #include <Commands/Scheduler.h>
 #include "Subsystems/Drive.h"
 #include "Subsystems/OI.h"
+#include "Commands/DriveTank.h"
 
 Robot::Robot() {
 	// define robot pointer
@@ -20,6 +21,7 @@ void Robot::RobotInit() {
 
 	drive = new Drive;
 	oi = new OI;
+	driveCommand = new DriveTank;
 }
 
 // disabled init implementation
@@ -35,6 +37,7 @@ void Robot::AutonomousInit() {
 // teleop init implementation
 void Robot::TeleopInit() {
 	std::cout << "Entered TeleopInit()" << std::endl;
+	driveCommand->Start();
 }
 
 // test init implementation
