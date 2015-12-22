@@ -16,7 +16,7 @@ void DriveTank::Initialize() {
 void DriveTank::Execute() {
 	float leftSpeed = robot->oi->GetLeftAxis();
 	float rightSpeed = robot->oi->GetRightAxis();
-	robot->drive->SetSpeeds(leftSpeed, rightSpeed);
+	robot->drive->SetSpeeds(-leftSpeed, -rightSpeed);
 }
 
 bool DriveTank::IsFinished() {
