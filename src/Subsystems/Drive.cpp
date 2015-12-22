@@ -42,4 +42,3 @@ void Drive::SetHighGear() {
 void Drive::SetLowGear(){
 	gearSolenoid->Set(DoubleSolenoid::kReverse);
 }
-}
