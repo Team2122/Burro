@@ -21,7 +21,6 @@ public:
 	void AutonomousPeriodic() override;
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
-
 };
 
 #endif /* SRC_ROBOT_H_ */
