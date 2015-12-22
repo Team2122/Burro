@@ -1,5 +1,6 @@
 #include "Drive.h"
 #include <Victor.h>
+#include <DoubleSolenoid.h>
 
 Drive::Drive() :
 		Subsystem("Drive") {
@@ -9,6 +10,7 @@ Drive::Drive() :
 	right1 = new Victor(3);
 	right2 = new Victor(4);
 	right3 = new Victor(5);
+	gearSolenoid = new DoubleSolenoid(0, 1);
 }
 
 Drive::~Drive() {
@@ -18,6 +20,7 @@ Drive::~Drive() {
 	delete right1;
 	delete right2;
 	delete right3;
+	delete gearSolenoid;
 }
 
 void Drive::SetSpeeds(float leftSpeed, float rightSpeed) {
@@ -31,4 +34,12 @@ void Drive::SetSpeeds(float leftSpeed, float rightSpeed) {
 
 void Drive::ResetSpeeds() {
 	SetSpeeds(0, 0);
+}
+void Drive::SetHighGear() {
+	gearSolenoid->Set(DoubleSolenoid::kForward);
+
+}
+void Drive::SetLowGear(){
+	gearSolenoid->Set(DoubleSolenoid::kReverse);
+}
 }

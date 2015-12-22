@@ -4,6 +4,7 @@
 #include <Commands/Subsystem.h>
 
 class Victor;
+class DoubleSolenoid;
 
 class Drive: public Subsystem {
 public:
@@ -12,6 +13,8 @@ public:
 
 	void SetSpeeds(float leftSpeed, float rightSpeed);
 	void ResetSpeeds();
+	void SetHighGear();
+	void SetLowGear();
 
 private:
 	Victor* left1;
@@ -20,6 +23,7 @@ private:
 	Victor* right1;
 	Victor* right2;
 	Victor* right3;
+	DoubleSolenoid* gearSolenoid;
 };
 
 #endif /* SRC_SUBSYSTEMS_DRIVE_H_ */
