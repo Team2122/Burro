@@ -5,6 +5,7 @@
 
 class Drive;
 class OI;
+class Scheduler;
 class Robot: public IterativeRobot {
 public:
 	Robot();
@@ -23,6 +24,9 @@ public:
 	void AutonomousPeriodic() override;
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
+
+private:
+	Scheduler* scheduler;
 };
 
 #endif /* SRC_ROBOT_H_ */

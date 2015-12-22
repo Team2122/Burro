@@ -3,6 +3,7 @@
 #include "CommandBase.h"
 #include <iostream>
 #include <HAL/HAL.hpp>
+#include <Commands/Scheduler.h>
 #include "Subsystems/Drive.h"
 #include "Subsystems/OI.h"
 
@@ -14,6 +15,9 @@ Robot::Robot() {
 // robot init implementation
 void Robot::RobotInit() {
 	std::cout << "Entered RobotInit()" << std::endl;
+
+	scheduler = Scheduler::GetInstance();
+
 	drive = new Drive;
 	oi = new OI;
 }
@@ -44,10 +48,12 @@ void Robot::DisabledPeriodic() {
 
 // autonomous periodic implementation
 void Robot::AutonomousPeriodic() {
+	scheduler->Run();
 }
 
 // teleop periodic implementation
 void Robot::TeleopPeriodic() {
+	scheduler->Run();
 }
 
 // test periodic implementation
