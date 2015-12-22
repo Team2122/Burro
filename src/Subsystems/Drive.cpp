@@ -30,5 +30,5 @@ void Drive::SetSpeeds(float leftSpeed, float rightSpeed) {
 }
 
 void Drive::ResetSpeeds() {
-	SetSpeeds(0, 0);
+	SetSpeeds(0,0);
 }

@@ -3,9 +3,12 @@
 
 #include <IterativeRobot.h>
 
+class Drive;
 class Robot: public IterativeRobot {
 public:
 	Robot();
+
+	Drive* drive;
 
 	void RobotInit() override;
 
@@ -18,6 +21,7 @@ public:
 	void AutonomousPeriodic() override;
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
+
 };
 
 #endif /* SRC_ROBOT_H_ */

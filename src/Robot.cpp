@@ -3,6 +3,7 @@
 #include "CommandBase.h"
 #include <iostream>
 #include <HAL/HAL.hpp>
+#include "Subsystems/Drive.h"
 
 Robot::Robot() {
 	// define robot pointer
@@ -12,6 +13,7 @@ Robot::Robot() {
 // robot init implementation
 void Robot::RobotInit() {
 	std::cout << "Entered RobotInit()" << std::endl;
+	drive = new Drive;
 }
 
 // disabled init implementation
