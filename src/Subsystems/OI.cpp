@@ -1,4 +1,5 @@
 #include <Joystick.h>
+#include <Buttons/JoystickButton.h>
 #include "OI.h"
 OI::OI() :
 		Subsystem("OI") {
@@ -21,4 +22,8 @@ float OI::GetRightAxis() {
 
 float OI::GetRightTurn() {
 	return driverJoystick->GetRawAxis(2);
+}
+
+JoystickButton* OI::GetDriverButton(uint32_t number) {
+	return new JoystickButton(driverJoystick, number);
 }

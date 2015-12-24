@@ -4,6 +4,7 @@
 #include <iostream>
 #include <HAL/HAL.hpp>
 #include <Commands/Scheduler.h>
+#include <Buttons/JoystickButton.h>
 
 #include "Subsystems/Drive.h"
 #include "Subsystems/OI.h"
@@ -29,6 +30,9 @@ void Robot::RobotInit() {
 	driveCommand = new DriveTank;
 	driveLowGear = new DriveLowGear;
 	driveHighGear = new DriveHighGear;
+
+	oi->GetDriverButton(5)->WhenPressed(driveHighGear);
+	oi->GetDriverButton(7)->WhenPressed(driveLowGear);
 }
 
 // disabled init implementation
