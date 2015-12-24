@@ -4,9 +4,13 @@
 #include <iostream>
 #include <HAL/HAL.hpp>
 #include <Commands/Scheduler.h>
+
 #include "Subsystems/Drive.h"
 #include "Subsystems/OI.h"
+
 #include "Commands/DriveTank.h"
+#include "Commands/DriveLowGear.h"
+#include "Commands/DriveHighGear.h"
 
 Robot::Robot() {
 	// define robot pointer
@@ -21,7 +25,10 @@ void Robot::RobotInit() {
 
 	drive = new Drive;
 	oi = new OI;
+
 	driveCommand = new DriveTank;
+	driveLowGear = new DriveLowGear;
+	driveHighGear = new DriveHighGear;
 }
 
 // disabled init implementation

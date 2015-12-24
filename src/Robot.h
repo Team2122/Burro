@@ -13,7 +13,7 @@ public:
 
 	Drive* drive;
 	OI* oi;
-	Command* driveCommand;
+	Command *driveCommand, *driveLowGear, *driveHighGear;
 
 	void RobotInit() override;
 
