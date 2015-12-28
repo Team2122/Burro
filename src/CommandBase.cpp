@@ -9,14 +9,14 @@ CommandBase::CommandBase(const char* name) :
 }
 
 void CommandBase::Initialize() {
-	logger.Info(GetName() + " command initialized");
+	logger.State(GetName() + " command initialized");
 }
 
 void CommandBase::End() {
-	logger.Info(GetName() + " command ended");
+	logger.State(GetName() + " command ended");
 }
 
 void CommandBase::Interrupted() {
-	logger.Info(GetName() + " command interrupted");
+	logger.State(GetName() + " command interrupted");
 }
 

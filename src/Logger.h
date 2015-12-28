@@ -7,8 +7,9 @@ class Logger {
 public:
 	Logger(const std::string& loggerSource);
 	void Info(const std::string& message);
-	void Warning(const std::string& message);
+	void Warn(const std::string& message);
 	void Error(const std::string& message);
+	void State(const std::string& message);
 private:
 	std::string source;
 };

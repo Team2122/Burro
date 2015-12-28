@@ -38,23 +38,23 @@ void Robot::RobotInit() {
 
 // disabled init implementation
 void Robot::DisabledInit() {
-	logger.Info("Entering disabled mode");
+	logger.State("Entering disabled mode");
 }
 
 // autonomous init implementation
 void Robot::AutonomousInit() {
-	logger.Info("Entering autonomous mode");
+	logger.State("Entering autonomous mode");
 }
 
 // teleop init implementation
 void Robot::TeleopInit() {
-	logger.Info("Entering teleop mode");
+	logger.State("Entering teleop mode");
 	driveCommand->Start();
 }
 
 // test init implementation
 void Robot::TestInit() {
-	logger.Info("Entering test mode");
+	logger.State("Entering test mode");
 }
 
 // disabled periodic implementation
