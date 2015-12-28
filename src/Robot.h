@@ -2,6 +2,7 @@
 #define SRC_ROBOT_H_
 
 #include <IterativeRobot.h>
+#include "Logger.h"
 
 class Drive;
 class OI;
@@ -29,6 +30,7 @@ public:
 
 private:
 	Scheduler* scheduler;
+	Logger logger;
 };
 
 #endif /* SRC_ROBOT_H_ */

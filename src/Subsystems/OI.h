@@ -1,9 +1,12 @@
 #ifndef SRC_SUBSYSTEMS_OI_H_
 #define SRC_SUBSYSTEMS_OI_H_
+
+#include "SubsystemBase.h"
+
 class Joystick;
 class JoystickButton;
-#include <Commands/Subsystem.h>
-class OI: public Subsystem {
+
+class OI: public SubsystemBase {
 public:
 	OI();
 	~OI();

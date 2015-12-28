@@ -3,7 +3,7 @@
 #include <DoubleSolenoid.h>
 
 Drive::Drive() :
-		Subsystem("Drive") {
+		SubsystemBase("Drive") {
 	left1 = new Victor(0);
 	left2 = new Victor(1);
 	left3 = new Victor(2);
@@ -39,6 +39,6 @@ void Drive::SetHighGear() {
 	gearSolenoid->Set(DoubleSolenoid::kForward);
 
 }
-void Drive::SetLowGear(){
+void Drive::SetLowGear() {
 	gearSolenoid->Set(DoubleSolenoid::kReverse);
 }
