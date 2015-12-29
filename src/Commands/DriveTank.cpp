@@ -3,14 +3,7 @@
 #include "Subsystems/OI.h"
 #include "Subsystems/Drive.h"
 #include "DriveTank.h"
-#include <cmath>
-
-float DeadZone(float value, float deadZone) {
-	if( fabs(value) <= deadZone ) {
-		value = 0;
-	}
-	return value;
-}
+#include "DeadZone.h"
 
 DriveTank::DriveTank() :
 		CommandBase("DriveTank") {
