@@ -10,16 +10,15 @@ DriveShifter::DriveShifter() :
 		Requires(robot->drive);
 	}
 
-
-void DriveShifter::Execute(){
+void DriveShifter::Initialize(){
 	robot->drive->SetLowGear();
 }
 
 bool DriveShifter::IsFinished(){
-	return true;
+	return false;
 }
 
-void DriveShifter::End(){
+void DriveShifter::Interrupted(){
 	robot->drive->SetHighGear();
 }
 

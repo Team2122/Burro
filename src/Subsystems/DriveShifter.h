@@ -13,9 +13,9 @@
 class DriveShifter: public CommandBase {
 public:
 	DriveShifter();
-	void Execute() override;
+	void Initialize() override;
 	bool IsFinished() override;
-	void End() override;
+	void Interrupted() override;
 };
 
 #endif /* SRC_SUBSYSTEMS_DRIVESHIFTER_H_ */
