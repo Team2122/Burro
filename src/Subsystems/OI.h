@@ -13,7 +13,6 @@ public:
 	JoystickButton* GetDriverButton(uint32_t number);
 private:
 	Joystick* driverJoystick;
-
 };
 
 #endif /* SRC_SUBSYSTEMS_OI_H_ */

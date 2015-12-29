@@ -12,6 +12,7 @@
 #include "Commands/DriveTank.h"
 #include "Commands/DriveLowGear.h"
 #include "Commands/DriveHighGear.h"
+#include "Commands/DriveShifter.h"
 
 Robot::Robot() {
 	// define robot pointer
@@ -30,9 +31,11 @@ void Robot::RobotInit() {
 	driveCommand = new DriveTank;
 	driveLowGear = new DriveLowGear;
 	driveHighGear = new DriveHighGear;
+	driveShifter = new DriveShifter;
 
 	oi->GetDriverButton(5)->WhenPressed(driveHighGear);
 	oi->GetDriverButton(7)->WhenPressed(driveLowGear);
+	oi->GetDriverButton(8)->WhileHeld(driveShifter);
 }
 
 // disabled init implementation
