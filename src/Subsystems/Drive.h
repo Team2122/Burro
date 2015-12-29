@@ -5,6 +5,7 @@
 
 class Victor;
 class DoubleSolenoid;
+class Encoder;
 
 class Drive: public Subsystem {
 public:
@@ -15,6 +16,8 @@ public:
 	void ResetSpeeds();
 	void SetHighGear();
 	void SetLowGear();
+	double GetDistanceTraveled();
+	void ResetEncoders();
 
 private:
 	Victor* left1;
@@ -24,6 +27,8 @@ private:
 	Victor* right2;
 	Victor* right3;
 	DoubleSolenoid* gearSolenoid;
+	Encoder* leftEncoder;
+	Encoder* rightEncoder;
 };
 
 #endif /* SRC_SUBSYSTEMS_DRIVE_H_ */

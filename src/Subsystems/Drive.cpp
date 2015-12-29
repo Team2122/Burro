@@ -1,6 +1,9 @@
 #include "Drive.h"
 #include <Victor.h>
 #include <DoubleSolenoid.h>
+#include <Encoder.h>
+
+const double WHEEL_CIRCUMFERENCE = 19.867432;
 
 Drive::Drive() :
 		Subsystem("Drive") {
@@ -11,6 +14,12 @@ Drive::Drive() :
 	right2 = new Victor(4);
 	right3 = new Victor(5);
 	gearSolenoid = new DoubleSolenoid(0, 1);
+	leftEncoder = new Encoder(0, 1);
+	rightEncoder = new Encoder(2, 3);
+	leftEncoder->SetDistancePerPulse(1.0 / 360.0);
+	rightEncoder->SetDistancePerPulse(1.0 / 360.0);
+	leftEncoder->SetReverseDirection(true);
+	rightEncoder->SetReverseDirection(false);
 }
 
 Drive::~Drive() {
@@ -21,6 +30,8 @@ Drive::~Drive() {
 	delete right2;
 	delete right3;
 	delete gearSolenoid;
+	delete leftEncoder;
+	delete rightEncoder;
 }
 
 void Drive::SetSpeeds(float leftSpeed, float rightSpeed) {
@@ -39,6 +50,17 @@ void Drive::SetHighGear() {
 	gearSolenoid->Set(DoubleSolenoid::kForward);
 
 }
-void Drive::SetLowGear(){
+void Drive::SetLowGear() {
 	gearSolenoid->Set(DoubleSolenoid::kReverse);
+}
+
+double Drive::GetDistanceTraveled() {
+	double leftDistance = leftEncoder->GetDistance() * WHEEL_CIRCUMFERENCE;
+	double rightDistance = rightEncoder->GetDistance() * WHEEL_CIRCUMFERENCE;
+	return (leftDistance + rightDistance) / 2;
+}
+
+void Drive::ResetEncoders() {
+	leftEncoder->Reset();
+	rightEncoder->Reset();
 }
