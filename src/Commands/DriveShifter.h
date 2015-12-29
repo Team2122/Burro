@@ -16,6 +16,7 @@ public:
 	void Initialize() override;
 	bool IsFinished() override;
 	void Interrupted() override;
+	void Execute() override;
 };
 
 #endif /* SRC_SUBSYSTEMS_DRIVESHIFTER_H_ */

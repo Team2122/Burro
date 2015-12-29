@@ -2,15 +2,13 @@
 #include <Buttons/JoystickButton.h>
 #include "OI.h"
 #include <Buttons/JoystickButton.h>
-#include "Subsystems/DriveShifter.h"
+#include "Commands/DriveShifter.h"
 OI::OI() :
 		Subsystem("OI") {
 	driverJoystick = new Joystick(0);
-	shiftButton = new JoystickButton(driverJoystick, 8);
 }
 OI::~OI() {
 	delete driverJoystick;
-	delete shiftButton;
 }
 
 float OI::GetLeftAxis() {
@@ -19,10 +17,6 @@ float OI::GetLeftAxis() {
 }
 float OI::GetRightAxis() {
 	return driverJoystick->GetRawAxis(3);
-}
-
-void WhileHeld(DriveShifter* execute){
-
 }
 
 float OI::GetRightTurn() {

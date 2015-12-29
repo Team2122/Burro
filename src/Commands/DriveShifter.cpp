@@ -1,4 +1,4 @@
-#include <Subsystems/DriveShifter.h>
+#include <Commands/DriveShifter.h>
 #include "Subsystems/OI.h"
 #include "Robot.h"
 #include "Subsystems/Drive.h"
@@ -11,6 +11,7 @@ DriveShifter::DriveShifter() :
 	}
 
 void DriveShifter::Initialize(){
+	CommandBase::Initialize();
 	robot->drive->SetLowGear();
 }
 
@@ -19,6 +20,10 @@ bool DriveShifter::IsFinished(){
 }
 
 void DriveShifter::Interrupted(){
+	CommandBase::Interrupted();
 	robot->drive->SetHighGear();
 }
 
+void DriveShifter::Execute(){
+
+}
