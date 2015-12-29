@@ -13,14 +13,15 @@
 #include "Commands/DriveLowGear.h"
 #include "Commands/DriveHighGear.h"
 
-Robot::Robot() {
+Robot::Robot() :
+		logger("Robot") {
 	// define robot pointer
 	CommandBase::robot = this;
 }
 
 // robot init implementation
 void Robot::RobotInit() {
-	std::cout << "Entered RobotInit()" << std::endl;
+	logger.Info("Initializing robot");
 
 	scheduler = Scheduler::GetInstance();
 
@@ -37,23 +38,23 @@ void Robot::RobotInit() {
 
 // disabled init implementation
 void Robot::DisabledInit() {
-	std::cout << "Entered DisabledInit()" << std::endl;
+	logger.State("Entering disabled mode");
 }
 
 // autonomous init implementation
 void Robot::AutonomousInit() {
-	std::cout << "Entered AutonomousInit()" << std::endl;
+	logger.State("Entering autonomous mode");
 }
 
 // teleop init implementation
 void Robot::TeleopInit() {
-	std::cout << "Entered TeleopInit()" << std::endl;
+	logger.State("Entering teleop mode");
 	driveCommand->Start();
 }
 
 // test init implementation
 void Robot::TestInit() {
-	std::cout << "Entered TestInit()" << std::endl;
+	logger.State("Entering test mode");
 }
 
 // disabled periodic implementation

@@ -2,7 +2,7 @@
 #include <Buttons/JoystickButton.h>
 #include "OI.h"
 OI::OI() :
-		Subsystem("OI") {
+		SubsystemBase("OI") {
 	driverJoystick = new Joystick(0);
 
 }

@@ -14,6 +14,8 @@ public:
 	virtual bool IsFinished() override = 0;
 	virtual void End() override;
 	virtual void Interrupted() override;
+private:
+	Logger logger;
 };
 
 #endif /* SRC_COMMANDBASE_H_ */

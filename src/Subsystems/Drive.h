@@ -1,12 +1,12 @@
 #ifndef SRC_SUBSYSTEMS_DRIVE_H_
 #define SRC_SUBSYSTEMS_DRIVE_H_
 
-#include <Commands/Subsystem.h>
+#include "SubsystemBase.h"
 
 class Victor;
 class DoubleSolenoid;
 
-class Drive: public Subsystem {
+class Drive: public SubsystemBase {
 public:
 	Drive();
 	~Drive();

@@ -4,18 +4,19 @@
 Robot* CommandBase::robot = nullptr;
 
 CommandBase::CommandBase(const char* name) :
-		Command(name) {
+		Command(name), logger(name) {
+
 }
 
 void CommandBase::Initialize() {
-	std::cout << GetName() << " command initialized" << std::endl;
+	logger.State(GetName() + " command initialized");
 }
 
 void CommandBase::End() {
-	std::cout << GetName() << " command ended" << std::endl;
+	logger.State(GetName() + " command ended");
 }
 
 void CommandBase::Interrupted() {
-	std::cout << GetName() << " command interrupted" << std::endl;
+	logger.State(GetName() + " command interrupted");
 }
 
