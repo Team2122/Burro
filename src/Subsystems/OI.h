@@ -1,4 +1,3 @@
-
 #ifndef SRC_SUBSYSTEMS_OI_H_
 #define SRC_SUBSYSTEMS_OI_H_
 class Joystick;
@@ -9,6 +8,7 @@ public:
 	~OI();
 	float GetLeftAxis();
 	float GetRightAxis();
+	float GetRightTurn();
 private:
 	Joystick* driverJoystick;
 

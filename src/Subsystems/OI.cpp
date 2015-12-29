@@ -18,3 +18,7 @@ float OI::GetRightAxis() {
 	return driverJoystick->GetRawAxis(3);
 
 }
+
+float OI::GetRightTurn() {
+	return driverJoystick->GetRawAxis(2);
+}
