@@ -3,6 +3,8 @@
 #include <DoubleSolenoid.h>
 #include <Encoder.h>
 
+const double WHEEL_CIRCUMFERENCE = 19.867432;
+
 Drive::Drive() :
 		Subsystem("Drive") {
 	left1 = new Victor(0);
@@ -53,8 +55,8 @@ void Drive::SetLowGear() {
 }
 
 double Drive::GetDistanceTraveled() {
-	double leftDistance = leftEncoder->GetDistance() * 19.867432;
-	double rightDistance = rightEncoder->GetDistance() * 19.867432;
+	double leftDistance = leftEncoder->GetDistance() * WHEEL_CIRCUMFERENCE;
+	double rightDistance = rightEncoder->GetDistance() * WHEEL_CIRCUMFERENCE;
 	return (leftDistance + rightDistance) / 2;
 }
 
