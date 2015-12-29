@@ -13,6 +13,7 @@ public:
 	JoystickButton* GetDriverButton(uint32_t number);
 private:
 	Joystick* driverJoystick;
+	JoystickButton* shiftButton;
 
 };
 
